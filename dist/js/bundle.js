@@ -19,6 +19,8 @@ __webpack_require__.r(__webpack_exports__);
 function slider() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.promo__slider').slick({
+      autoplay: true,
+      autoplaySpeed: 2000,
       slidesToShow: 1,
       slidesToScroll: 1,
       dots: true,
