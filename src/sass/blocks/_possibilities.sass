@@ -3,11 +3,14 @@
     &__wrapper
         display: flex
         justify-content: center
+        flex-wrap: wrap
     &__item
         width: 360px
         margin: 0 15px
         border: 1px solid #ececec
         border-radius: 4px
+        &:nth-child(odd)
+            margin: 0 0
         &_efficiency
             padding: 176px 0 36px
             background: url('../img/possibilities/efficiency.png') center center/cover no-repeat
