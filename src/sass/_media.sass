@@ -6,19 +6,22 @@
             margin-top: 19px
     .promo
         &__wrapper-header
-            width: 85%
+            width: 86%
         &__title
             font-size: 38px
         &__descr
             font-size: 22px
         &__img
             height: 100vh
+    .possibilities
+        padding: 60px 0
+        &__item:nth-child(n+3)
+            margin-top: 15px
+            
 @media (max-width: 992px)
     .container
         width: 720px
     .promo
-        &__wrapper-header
-            width: 94%
         &__title
             font-size: 36px
         &__descr
@@ -26,6 +29,10 @@
     .btn
         width: 220px
         height: 55px
+    .possibilities
+        padding: 60px 0
+        &__item
+            margin-top: 15px
 @media (max-width: 768px)
     .container
         width: 540px
@@ -134,6 +141,10 @@
     .promo
         &__title
             font-size: 30px
+    .possibilities
+        padding: 50px 0
+        &__item
+            margin: 15px 0 0
 @media (max-width: 500px)
     .promo
         &__links
