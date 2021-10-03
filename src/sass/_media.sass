@@ -35,7 +35,7 @@
     .promo
         &__wrapper-header
             width: 85%
-        &__wrapper-burger
+        &__wrapper-humburger
             position: relative
             display: flex
             justify-content: center
@@ -43,7 +43,7 @@
             width: 50px
             height: 50px
             margin-right: 20px
-        &__burger
+        &__humburger
             display: flex
             width: 45px
             height: 2px
@@ -70,9 +70,9 @@
             height: 100%
             position: fixed
             top: 0
-            left: 0
+            left: -100%
             z-index: 50
-            transition-duration: 0.65s
+            transition-duration: 0.8s
         &__link
             width: 37vw
             margin: 15px 0
@@ -82,7 +82,7 @@
             &:hover
                 color: $btn-hover
         &__active
-            left: -100%
+            left: 0%
         &__cross
             display: flex
             position: absolute
@@ -115,7 +115,7 @@
 
 @media (max-width: 690px)
     .promo
-        &__wrapper-burger
+        &__wrapper-humburger
             margin-right: 0
 
 

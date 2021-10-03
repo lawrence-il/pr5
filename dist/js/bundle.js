@@ -36,6 +36,36 @@ function slider() {
 
 /***/ }),
 
+/***/ "./src/js/modules/toggleMenu.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/toggleMenu.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function toggleMenu(selectorOpen, classActive, humburgerMenu) {
+  selectorOpen.addEventListener('click', () => {
+    humburgerMenu.classList.toggle(classActive);
+  });
+  document.documentElement.addEventListener('click', e => {
+    if (e.target && e.target != humburgerMenu && e.target != selectorOpen && e.target != selectorOpen.children[0]) {
+      humburgerMenu.classList.remove(classActive);
+      document.documentElement.style.overflow = 'auto';
+    }
+  });
+
+  if (humburgerMenu.classList.contains(classActive)) {
+    document.documentElement.style.overflow = 'hidden';
+  } else {
+    document.documentElement.style.overflow = 'auto';
+  }
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (toggleMenu);
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -14025,11 +14055,16 @@ var __webpack_exports__ = {};
   \**************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ "./src/js/modules/toggleMenu.js");
 
+
+const humburger = document.querySelector('.promo__wrapper-humburger'),
+      humburgerMenu = document.querySelector('.promo__links');
 
 
 document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__["default"])(humburger, 'promo__active', humburgerMenu);
 });
 }();
 /******/ })()
