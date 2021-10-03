@@ -11,9 +11,9 @@ $(document).ready(function () {
       slidesToScroll: 1,
       dots: true,
       arrows: true,
-      nextArrow: document.querySelector('.arrow-next'),
-      prevArrow: document.querySelector('.arrow-prev'),
-      appendDots: document.querySelector('.dots'),
+      nextArrow: document.querySelector('.promo__arrow-next'),
+      prevArrow: document.querySelector('.promo__arrow-prev'),
+      appendDots: document.querySelector('.promo__dots'),
     });
   });
 }

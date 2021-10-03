@@ -49,6 +49,39 @@
         font-weight: 400
         color: #fff
         margin-bottom: 36px
+    &__navs
+        position: absolute
+        display: flex
+        justify-content: center
+        min-width: 200px
+        top: 90%
+        left: 50%
+        transform: translateX(-50%)
+    &__arrow
+        &-next, &-prev
+            position: relative
+            display: flex
+            width: 20px
+            height: 20px
+            z-index: 5
+            top: -4px
+            cursor: pointer
+            &:after, &:before
+                content: ''
+                position: relative
+                width: 1px
+                height: 7px
+                background: #fff
+            &:after
+                transform: rotate(-50deg)
+                left: 4px
+                top: 8.5px
+            &:before
+                transform: rotate(50deg)
+                left: 5px
+                top: 4.5px
+        &-next
+            transform: rotate(180deg)
 
 .slick
     &-track
@@ -68,42 +101,8 @@
             font-size: 0
             background: #ffffff00
 
+
 button[tabindex="0"]
     background: #fff
 
-.navs
-    position: absolute
-    display: flex
-    justify-content: center
-    min-width: 200px
-    top: 90%
-    left: 50%
-    transform: translateX(-50%)
-
-
-.arrow
-    &-next, &-prev
-        position: relative
-        display: flex
-        width: 20px
-        height: 20px
-        z-index: 5
-        top: -4px
-        cursor: pointer
-        &:after, &:before
-            content: ''
-            position: relative
-            width: 1px
-            height: 7px
-            background: #fff
-        &:after
-            transform: rotate(-50deg)
-            left: 4px
-            top: 8.5px
-        &:before
-            transform: rotate(50deg)
-            left: 5px
-            top: 4.5px
-    &-next
-        transform: rotate(180deg)
         
