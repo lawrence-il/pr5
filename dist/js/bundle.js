@@ -16,19 +16,46 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function slider() {
+function slider({
+  selector,
+  prev,
+  next,
+  btns,
+  play,
+  speed,
+  onDotsToText,
+  arrayText = [],
+  dotsContainer = 'slick-dots'
+}) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.promo__slider').slick({
-      autoplay: true,
-      autoplaySpeed: 2000,
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(selector).slick({
+      autoplay: play,
+      autoplaySpeed: speed,
       slidesToShow: 1,
       slidesToScroll: 1,
       dots: true,
       arrows: true,
-      nextArrow: document.querySelector('.promo__arrow-next'),
-      prevArrow: document.querySelector('.promo__arrow-prev'),
-      appendDots: document.querySelector('.promo__dots')
+      nextArrow: document.querySelector(next),
+      prevArrow: document.querySelector(prev),
+      appendDots: document.querySelector(btns),
+      dotsClass: dotsContainer
     });
+
+    if (onDotsToText) {
+      const dotsToText = function (arrayText) {
+        const dots = document.querySelectorAll(`.${dotsContainer} button`);
+        dots.forEach((dot, i) => {
+          dot.textContent = arrayText[i];
+          dot.classList.add('solutions__dot');
+
+          if (i == arrayText.length - 1) {
+            dot.style.border = 'none';
+          }
+        });
+      };
+
+      dotsToText(arrayText);
+    }
   });
 }
 
@@ -14063,8 +14090,26 @@ const humburger = document.querySelector('.promo__wrapper-humburger'),
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    selector: '.promo__slider',
+    btns: '.promo__dots',
+    prev: '.promo__arrow-prev',
+    next: '.promo__arrow-next',
+    play: 1,
+    speed: 2000
+  });
   (0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__["default"])(humburger, 'promo__active', humburgerMenu);
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    selector: '.solutions__slider',
+    btns: '.solutions__wrapper-dots',
+    prev: '.solutions__arrow-prev',
+    next: '.solutions__arrow-next',
+    play: 0,
+    speed: 2000,
+    dotsContainer: 'solutions__dots',
+    onDotsToText: true,
+    arrayText: ['Prengi Production', 'Prengi FMC', 'Prengi Mallz Retail', 'Prengi Logistic', 'Prengi IT', 'Prengi HR']
+  });
 });
 }();
 /******/ })()
