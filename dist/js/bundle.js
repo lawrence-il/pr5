@@ -24,6 +24,7 @@ function slider({
   play,
   speed,
   onDotsToText,
+  dotsStyleClass,
   arrayText = [],
   dotsContainer = 'slick-dots'
 }) {
@@ -46,7 +47,7 @@ function slider({
         const dots = document.querySelectorAll(`.${dotsContainer} button`);
         dots.forEach((dot, i) => {
           dot.textContent = arrayText[i];
-          dot.classList.add('solutions__dot');
+          dot.classList.add(dotsStyleClass);
 
           if (i == arrayText.length - 1) {
             dot.style.border = 'none';
@@ -14108,7 +14109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 2000,
     dotsContainer: 'solutions__dots',
     onDotsToText: true,
-    arrayText: ['Prengi Production', 'Prengi FMC', 'Prengi Mallz Retail', 'Prengi Logistic', 'Prengi IT', 'Prengi HR']
+    arrayText: ['Prengi Production', 'Prengi FMC', 'Prengi Mallz Retail', 'Prengi Logistic', 'Prengi IT', 'Prengi HR'],
+    dotsStyleClass: 'solutions__dot'
   });
 });
 }();

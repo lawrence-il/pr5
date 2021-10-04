@@ -9,6 +9,7 @@ function slider({
   play,
   speed,
   onDotsToText,
+  dotsStyleClass,
   arrayText = [],
   dotsContainer = 'slick-dots'
 }) {
@@ -36,7 +37,7 @@ function slider({
         dots.forEach((dot, i) => {
 
           dot.textContent = arrayText[i];
-          dot.classList.add('solutions__dot');
+          dot.classList.add(dotsStyleClass);
           if (i == arrayText.length - 1) {
             dot.style.border = 'none';
           }
