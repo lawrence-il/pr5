@@ -30,6 +30,7 @@ function slider({
 }) {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(selector).slick({
+      lazyLoad: 'ondemand',
       autoplay: play,
       autoplaySpeed: speed,
       slidesToShow: 1,
@@ -39,7 +40,9 @@ function slider({
       nextArrow: document.querySelector(next),
       prevArrow: document.querySelector(prev),
       appendDots: document.querySelector(btns),
-      dotsClass: dotsContainer
+      dotsClass: dotsContainer,
+      variableWidth: true,
+      centerMode: true
     });
 
     if (onDotsToText) {

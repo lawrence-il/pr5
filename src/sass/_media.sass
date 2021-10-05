@@ -4,11 +4,14 @@
     .contacts
         &__block:nth-child(n+5)
             margin-top: 19px
+
+    .title_promo
+        font-size: 38px 
+        
+
     .promo
         &__wrapper-header
             width: 86%
-        &__title
-            font-size: 38px
         &__descr
             font-size: 22px
         &__img
@@ -17,13 +20,17 @@
         padding: 60px 0
         &__item:nth-child(n+3)
             margin-top: 15px
+    .solutions
+        &__arrow-next
+            right: 8%
+        &__arrow-prev
+            left: 8%    
+
             
 @media (max-width: 992px)
     .container
         width: 720px
     .promo
-        &__title
-            font-size: 36px
         &__descr
             font-size: 20px
     .btn
@@ -33,13 +40,44 @@
         padding: 60px 0
         &__item
             margin-top: 15px
+
+    .title_promo
+        font-size: 36px 
+
+    .solutions
+        background: url(../img/solutions/bg.jpg)right center no-repeat
+        &__slider
+            position: inherit
+            margin: 0 50%
+        &__dots
+            padding: 5px 0
+            & button
+                border-width: 0
+        &__dot
+            margin: 5px 0
+        &__arrow-prev, &__arrow-next
+            top: 63%
+        &__macbook
+            display: none
+
+@media (max-width: 909px) 
+    .solutions
+        &__arrow-prev, &__arrow-next
+            display: none
+
 @media (max-width: 768px)
     .container
         width: 540px
     .contacts
         &__block:nth-child(n+3)
             margin-top: 19px
+    .title_promo
+        font-size: 34px 
+
     .promo
+        &__descr
+            font-size: 20px
+            margin-bottom: 32px
         &__wrapper-header
             width: 85%
         &__wrapper-humburger
@@ -114,40 +152,56 @@
                 transform: rotate(45deg)
             &:hover
                 transform: rotate(180deg)
-            &__title
-                font-size: 34px
-            &__descr
-                font-size: 20px
-                margin-bottom: 32px
+        
+    
+    .solutions
+        &__slider
+            width: 100%
+            & .slick-slide
+                width: 540px
+           
 
 @media (max-width: 768px) 
     .container
         width: 540px
-    .promo
-        &__title 
-            font-size: 34px
 
 @media (max-width: 690px)
     .promo
         &__wrapper-humburger
             margin-right: 0
+
 @media (max-width: 576px)
     .container
         width: 100%
         padding: 0 10px
+
+    .title
+        font-size: 28px
+        &_promo
+            font-size: 30px 
+
     .promo
         &__descr
             font-size: 18px
-    .promo
-        &__title
-            font-size: 30px
     .possibilities
         padding: 50px 0
         &__item
             margin: 15px 0 0
+    .solutions
+        &__dots
+            justify-content: center
+        &__slider .slick-slide
+            width: 100vw
+            margin: 0 15px
+
 @media (max-width: 500px)
     .promo
         &__links
             width: 100vw
+    .solutions
+        &__slider
+            width: 100%
+            &.slick-slide 
+                width: 410px
 
                 

@@ -19,6 +19,7 @@ function slider({
 
 
     $(selector).slick({
+      lazyLoad: 'ondemand',
       autoplay: play,
       autoplaySpeed: speed,
       slidesToShow: 1,
@@ -29,6 +30,9 @@ function slider({
       prevArrow: document.querySelector(prev),
       appendDots: document.querySelector(btns),
       dotsClass: dotsContainer,
+      variableWidth: true,
+      centerMode: true,
+      
     });
     if (onDotsToText) {
       const dotsToText = function (arrayText) {
