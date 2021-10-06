@@ -46,6 +46,9 @@
         padding: 60px 0
         &__item
             margin-top: 15px
+    .advantages, .solutions, .deployment, .acceess
+        padding: 60px 0
+    
 
     .title_promo
         font-size: 36px 
@@ -165,7 +168,21 @@
         &__slider
             width: 100%
             & .slick-slide
-                width: 540px        
+                width: 540px
+
+    .deployment
+        &__txt
+            & span
+                font-size: 24px
+            &:nth-child(even)
+                margin: 10px 0 0
+            &:nth-child(odd)
+                margin: 0px
+                padding: 33px 0 33px 40px
+                text-align: left
+                background: linear-gradient(to left,#ffffff00 67%,rgba(0,192,240,.4) 20%)
+        &__descr
+            font-size: 16px
 
 @media (max-width: 690px)
     .promo
@@ -186,9 +203,11 @@
         &__descr
             font-size: 18px
     .possibilities
-        padding: 50px 0
         &__item
             margin: 15px 0 0
+    .advantages, .solutions, .deployment, .access
+        padding: 50px 0
+
     .solutions
         &__dots
             justify-content: center
@@ -200,6 +219,10 @@
             width: 100%
             & img
                 width: 100%
+    .deployment
+        background: url(../img/deployment/bg_left.jpg) center center/cover no-repeat
+        &__wrapper-txt
+            margin-top: 75px
 
 @media (max-width: 500px)
     .promo
@@ -215,6 +238,8 @@
             font-size: 20px
 
 @media (max-width: 375px)
+    .access__wrapper-img
+        width: 280px
     .advantages
         &__wrapper-txt
             height: 120px
