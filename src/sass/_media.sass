@@ -1,3 +1,10 @@
+@media (min-width: 1200px) and (max-width: 1700px)
+    .solutions
+        &__arrow-next
+            right: 15%
+        &__arrow-prev
+            left: 15%  
+
 @media (max-width: 1200px)
     .container
         width: 960px
@@ -8,7 +15,6 @@
     .title_promo
         font-size: 38px 
         
-
     .promo
         &__wrapper-header
             width: 86%
@@ -48,6 +54,7 @@
         background: url(../img/solutions/bg.jpg)right center no-repeat
         &__slider
             position: inherit
+            height: 100%
             margin: 0 50%
         &__dots
             padding: 5px 0
@@ -56,7 +63,7 @@
         &__dot
             margin: 5px 0
         &__arrow-prev, &__arrow-next
-            top: 63%
+            top: 56%
         &__macbook
             display: none
 
@@ -158,12 +165,7 @@
         &__slider
             width: 100%
             & .slick-slide
-                width: 540px
-           
-
-@media (max-width: 768px) 
-    .container
-        width: 540px
+                width: 540px        
 
 @media (max-width: 690px)
     .promo
@@ -193,6 +195,11 @@
         &__slider .slick-slide
             width: 100vw
             margin: 0 15px
+    .advantages
+        &__item
+            width: 100%
+            & img
+                width: 100%
 
 @media (max-width: 500px)
     .promo
@@ -203,5 +210,16 @@
             width: 100%
             &.slick-slide 
                 width: 410px
+    .advantages
+        &__txt
+            font-size: 20px
+
+@media (max-width: 375px)
+    .advantages
+        &__wrapper-txt
+            height: 120px
+        &__txt
+            font-size: 16px
+            width: 300px
 
                 

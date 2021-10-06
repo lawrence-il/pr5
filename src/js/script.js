@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         arrayText: ['Prengi Production', 'Prengi FMC', 'Prengi Mallz Retail', 'Prengi Logistic', 
         'Prengi IT', 'Prengi HR'],
         dotsStyleClass: 'solutions__dot',
+        brkpoint: 909,
     });
 
 

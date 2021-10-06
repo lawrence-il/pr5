@@ -8,10 +8,11 @@ function slider({
   btns,
   play,
   speed,
-  onDotsToText,
   dotsStyleClass,
+  brkpoint = 0,
+  onDotsToText = false,
   arrayText = [],
-  dotsContainer = 'slick-dots'
+  dotsContainer = 'slick-dots',
 }) {
 
   $(document).ready(function () {
@@ -32,6 +33,15 @@ function slider({
       dotsClass: dotsContainer,
       variableWidth: true,
       centerMode: true,
+      adaptiveHeight: true,
+      responsive : [ 
+        {
+        breakpoint: brkpoint,
+        settings: {
+          arrows: false,
+        }
+      }
+    ]
       
     });
     if (onDotsToText) {

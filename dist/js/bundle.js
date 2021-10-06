@@ -23,8 +23,9 @@ function slider({
   btns,
   play,
   speed,
-  onDotsToText,
   dotsStyleClass,
+  brkpoint = 0,
+  onDotsToText = false,
   arrayText = [],
   dotsContainer = 'slick-dots'
 }) {
@@ -42,7 +43,14 @@ function slider({
       appendDots: document.querySelector(btns),
       dotsClass: dotsContainer,
       variableWidth: true,
-      centerMode: true
+      centerMode: true,
+      adaptiveHeight: true,
+      responsive: [{
+        breakpoint: brkpoint,
+        settings: {
+          arrows: false
+        }
+      }]
     });
 
     if (onDotsToText) {
@@ -14113,7 +14121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     dotsContainer: 'solutions__dots',
     onDotsToText: true,
     arrayText: ['Prengi Production', 'Prengi FMC', 'Prengi Mallz Retail', 'Prengi Logistic', 'Prengi IT', 'Prengi HR'],
-    dotsStyleClass: 'solutions__dot'
+    dotsStyleClass: 'solutions__dot',
+    brkpoint: 909
   });
 });
 }();
