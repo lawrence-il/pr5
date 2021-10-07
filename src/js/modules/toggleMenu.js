@@ -1,6 +1,7 @@
 function toggleMenu(selectorOpen, classActive, humburgerMenu) {
   selectorOpen.addEventListener('click', () => {
     humburgerMenu.classList.toggle(classActive);
+    document.documentElement.style.overflow = 'hidden';
   });
   document.documentElement.addEventListener('click', (e) => {
     if (e.target && e.target != humburgerMenu && e.target != selectorOpen && 
