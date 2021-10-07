@@ -89,7 +89,7 @@
                 <div class="promo__descr">PRENGI - Платформа для прозрачного <br>
                     управления бизнесом
                 </div>
-                <button class="btn">Получить доступ</button>
+                <button class="btn" data-modal="modal">Получить доступ</button>
             </div>
         </div>
         <div class="promo__slider">
@@ -289,7 +289,7 @@
                 Приступить очень просто! <br>
                 Нужно получить доступ и начать работу!
             </h2>
-            <button class="btn">связаться с нами</button>
+            <button class="btn" data-modal="modal">связаться с нами</button>
     </section>
     <footer class="footer">
         <div class="container">
@@ -400,6 +400,17 @@
         <div class="footer__line"></div> 
         <div class="footer__copyright">© Prengi Ink. 2008-2017 Все права защищены.</div>
     </footer>
+    <section class="overlay">
+        <div class="overlay__modal">
+            <div class="overlay__cross">&times;</div>
+            <h2 class="title title_black title_modal">Мы свяжемся с вами как можно быстрее!</h2>
+            <form action="#" class="overlay__form">
+                <input name="name"  placeholder="Ваше имя" type="text" class="overlay__input">
+                <input name="phone"  placeholder="Ваш номер телефона" type="text" class="overlay__input">
+                <button class="btn">Перезвонить мне</button>
+            </form>
+        </div>
+    </section>
     <script src="js/bundle.js"></script>
 </body>
 

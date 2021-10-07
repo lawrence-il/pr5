@@ -5,6 +5,7 @@ const humburger = document.querySelector('.promo__wrapper-humburger'),
 
 import slider from './modules/slider';
 import toggleMenu from './modules/toggleMenu';
+import modal from './modules/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -17,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 2000,    
     });
     toggleMenu(humburger, 'promo__active', humburgerMenu);
+    modal({
+        selectorButtons: "[data-modal='modal']",
+        selectorOverlay:'.overlay',
+        selectorModalWindow: '.overlay__modal',
+    }
+    );
     slider({
         selector: '.solutions__slider',
         btns: '.solutions__wrapper-dots',

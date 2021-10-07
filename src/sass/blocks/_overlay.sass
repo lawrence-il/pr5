@@ -1,0 +1,48 @@
+.overlay
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    height: 100vh
+    width: 100vw
+    background: rgba(0, 0, 0, 0.45)
+    z-index: 20
+    &__cross
+        display: flex
+        position: absolute
+        justify-content: center
+        align-items: center
+        height: 45px
+        width: 45px
+        font-size: 45px
+        color: $main-color
+        top: 10px
+        right: 20px
+        transition-duration: 0.35s
+        &:hover
+            color: $btn-hover
+    &__modal
+        padding: 50px 30px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background: #fff
+        width: 300px
+        border-radius: 3px
+    &__form
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__input
+        margin-top: 20px
+        height: 50px
+        border: 1px solid #c5c5c5
+        border-radius: 6px
+        padding: 15px
+        &:last-of-type
+            margin-bottom: 20px

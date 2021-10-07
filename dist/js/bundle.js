@@ -1,6 +1,41 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function modal({
+  selectorButtons,
+  selectorOverlay,
+  selectorModalWindow
+}) {
+  const btns = document.querySelectorAll(selectorButtons),
+        overlay = document.querySelector(selectorOverlay),
+        modalWindow = document.querySelector(selectorModalWindow);
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      overlay.style.display = 'block';
+      document.documentElement.style.overflow = "hidden";
+    });
+  });
+  console.log(modalWindow.children);
+  overlay.addEventListener('click', e => {
+    if (e.target && e.target != modalWindow && e.target.localName != 'h2' && e.target.localName != 'form' && e.target.localName != 'button' && e.target.localName != 'input') {
+      overlay.style.display = 'none';
+      document.documentElement.style.overflow = 'auto';
+    }
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (modal);
+
+/***/ }),
+
 /***/ "./src/js/modules/slider.js":
 /*!**********************************!*\
   !*** ./src/js/modules/slider.js ***!
@@ -89,17 +124,11 @@ function toggleMenu(selectorOpen, classActive, humburgerMenu) {
     document.documentElement.style.overflow = 'hidden';
   });
   document.documentElement.addEventListener('click', e => {
-    if (e.target && e.target != humburgerMenu && e.target != selectorOpen && e.target != selectorOpen.children[0]) {
+    if (e.target && e.target != humburgerMenu && e.target != selectorOpen && e.target != selectorOpen.children[0] && humburgerMenu.classList.contains(classActive)) {
       humburgerMenu.classList.remove(classActive);
       document.documentElement.style.overflow = 'auto';
     }
   });
-
-  if (humburgerMenu.classList.contains(classActive)) {
-    document.documentElement.style.overflow = 'hidden';
-  } else {
-    document.documentElement.style.overflow = 'auto';
-  }
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (toggleMenu);
@@ -14096,10 +14125,12 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ "./src/js/modules/toggleMenu.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
 
 
 const humburger = document.querySelector('.promo__wrapper-humburger'),
       humburgerMenu = document.querySelector('.promo__links');
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14112,6 +14143,11 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 2000
   });
   (0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__["default"])(humburger, 'promo__active', humburgerMenu);
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])({
+    selectorButtons: "[data-modal='modal']",
+    selectorOverlay: '.overlay',
+    selectorModalWindow: '.overlay__modal'
+  });
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_0__["default"])({
     selector: '.solutions__slider',
     btns: '.solutions__wrapper-dots',
