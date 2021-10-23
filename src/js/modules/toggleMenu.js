@@ -1,7 +1,12 @@
 function toggleMenu(selectorOpen, classActive, humburgerMenu) {
   selectorOpen.addEventListener('click', () => {
     humburgerMenu.classList.toggle(classActive);
-    document.documentElement.style.overflow = 'hidden';
+    if (humburgerMenu.classList.contains(classActive)) {
+        document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'auto';
+    }
+      
   });
   document.documentElement.addEventListener('click', (e) => {
     if (e.target && e.target != humburgerMenu && e.target != selectorOpen && 
