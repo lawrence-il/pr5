@@ -1,7 +1,7 @@
 'use strict';
 
 const humburger = document.querySelector('.promo__wrapper-humburger'),
-          humburgerMenu = document.querySelector('.promo__links');
+        humburgerMenu = document.querySelector('.promo__links');
 
 import slider from './modules/slider';
 import toggleMenu from './modules/toggleMenu';
@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
         play: 1,
         speed: 2000,    
     });
-    toggleMenu(humburger, 'promo__active', humburgerMenu);
+    toggleMenu('.promo__wrapper-humburger', 
+                '.promo__links', '.promo__active', 
+                '.promo__humburger' );
     modal({
         selectorButtons: "[data-modal='modal']",
         selectorOverlay:'.overlay',
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         next: '.solutions__arrow-next',
         play: 0,
         speed: 2000,
+        
         dotsContainer: 'solutions__dots',
         onDotsToText: true,
         arrayText: ['Prengi Production', 'Prengi FMC', 'Prengi Mallz Retail', 'Prengi Logistic', 

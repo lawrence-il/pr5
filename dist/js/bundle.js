@@ -118,19 +118,19 @@ function slider({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function toggleMenu(selectorOpen, classActive, humburgerMenu) {
-  selectorOpen.addEventListener('click', () => {
-    humburgerMenu.classList.toggle(classActive);
+function toggleMenu(menuBtnClass, menuClass, classActive, menuClassChildren) {
+  const humburgerMenu = document.querySelector(menuClass);
+  document.addEventListener('click', e => {
+    if (e.target && (e.target.classList.contains(menuBtnClass.slice(1)) || e.target.classList.contains(menuClassChildren.slice(1)))) {
+      humburgerMenu.classList.toggle(classActive.slice(1));
 
-    if (humburgerMenu.classList.contains(classActive)) {
-      document.documentElement.style.overflow = 'hidden';
-    } else {
-      document.documentElement.style.overflow = 'auto';
-    }
-  });
-  document.documentElement.addEventListener('click', e => {
-    if (e.target && e.target != humburgerMenu && e.target != selectorOpen && e.target != selectorOpen.children[0] && humburgerMenu.classList.contains(classActive)) {
-      humburgerMenu.classList.remove(classActive);
+      if (humburgerMenu.classList.contains(classActive.slice(1))) {
+        document.documentElement.style.overflow = 'hidden';
+      } else {
+        document.documentElement.style.overflow = 'auto';
+      }
+    } else if (e.target && !e.target.classList.contains(menuClass.slice(1))) {
+      humburgerMenu.classList.remove(classActive.match(/[^\.]+/));
       document.documentElement.style.overflow = 'auto';
     }
   });
@@ -14147,7 +14147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     play: 1,
     speed: 2000
   });
-  (0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__["default"])(humburger, 'promo__active', humburgerMenu);
+  (0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__["default"])('.promo__wrapper-humburger', '.promo__links', '.promo__active', '.promo__humburger');
   (0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])({
     selectorButtons: "[data-modal='modal']",
     selectorOverlay: '.overlay',
