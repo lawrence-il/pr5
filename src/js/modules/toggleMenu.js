@@ -13,7 +13,7 @@ function toggleMenu (menuBtnClass, menuClass, classActive, menuClassChildren) {
                 document.documentElement.style.overflow = 'auto';
             }
 			
-    } else if (e.target && !e.target.classList.contains(menuClass.slice(1))) {
+    } else if (e.target && humburgerMenu.classList.contains(classActive.slice(1)) && !e.target.classList.contains(menuClass.slice(1))) {
             humburgerMenu.classList.remove(classActive.match(/[^\.]+/));
             document.documentElement.style.overflow = 'auto';
     }
