@@ -14133,8 +14133,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
 
 
-const humburger = document.querySelector('.promo__wrapper-humburger'),
-      humburgerMenu = document.querySelector('.promo__links');
 
 
 
